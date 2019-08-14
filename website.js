@@ -63,7 +63,7 @@ searchButton.onclick = function(event) {
 
                     resultsPage.innerHTML = "";
                     let temp;
-
+                    let tempHTML = ""
                     for(let i = 0; i < myJson.data.length; i++) {
                         if (myJson.data[i].ratings[0]) {
                             if (myJson.data[i].ratings[0].image_url_large || (myJson.data[i].ratings[1] && myJson.data[i].ratings[1].image_url_large )) {
@@ -78,11 +78,18 @@ searchButton.onclick = function(event) {
                             temp = `No Ratings`;
                         }
 
-                        resultsPage.innerHTML += ` 
+                        tempHTML += ` 
                         <div id="description">
                             <div class="image_number">
                                 <div class="image">
-                                    <img src=${myJson.data[i].profile.image_url} width="160px" height="160px" style="border-radius: 50%;">
+                                    <img src=`
+                                    
+                            if(myJson.data[i].profile.image_url.includes("general")){
+                                tempHTML += `"images/placeHolder.jpg"`;
+                            }else{
+                                tempHTML += myJson.data[i].profile.image_url;
+                            }
+                        tempHTML += ` width="160px" height="160px" style="border-radius: 50%;">
                                 </div>
                     
                                 <div class="number_website_location">
@@ -99,10 +106,16 @@ searchButton.onclick = function(event) {
                                 ${myJson.data[i].profile.bio}
                             </div> 
                             <div class="insurance">
-                                <h3 class="des_titles insurance_title">Insurance</h3>
-                                ${myJson.data[i].insurances[0].insurance_provider.name}
-                            </div>
+                                <h3 class="des_titles insurance_title">Insurance</h3>`
+                            if(myJson.data[i].insurances[0]){
+                                tempHTML += myJson.data[i].insurances[0].insurance_provider.name
+                            }else{
+                                tempHTML += "No insurance provided";
+                            }
+                        tempHTML += `</div>
                         </div>`
+                        resultsPage.innerHTML += tempHTML;
+                        tempHTML = '';
                     }
                 })
         })
@@ -209,10 +222,10 @@ function autocomplete(inp, arr) {
 }
 
 /*An array containing all the country names in the world:*/
-var countries = ["Pediatrician", "Dentist", "Sports Physical Therapy", "Sports Vision", "Surgery Hospice and Palliative Medicine" , "Sleep Medicine" , "Therapeutic Radiology" , "Speech Therapy" , "Spinal Cord Injury Medicine" , "Legal Medicine" , "Chiropractic Medical Examiner" , "Psych/Mental Health Nurse Practitioner" , "MOHS-Micrographic Surgery" , "Neuropathology" , "Nuclear Cardiology" , "Nuclear Imaging & Therapy" , "Occupational Medicine" , "Critical Care Medicine OBGYN" , "Dental Therapist" , "Dermatology" , "Vision Therapy" , "Pain Medicine" , "Blood Banking & Transfusion Medicine" , "Otolaryngology" , "Pediatric Radiology" , "Chiropractic Rehabilitation" , "Psychiatry" , "Plastic Surgery" , "Physical Therapy", "Foot Surgery" , "Rehabilitation Counselor" , "Rheumatology" , "Acupuncture" , "Addiction Psychiatry" , "Cardiopulmonary Physical Therapy" , "Critical Care Medicine" , "Audiology & Hearing Aid Fitter" , "Internal Medicine" , "Nutrition Medicine"]; //NAME
+var countries = ["OBGYN", "Pediatrician", "Dentist", "Sports Physical Therapy", "Sports Vision", "Surgery Hospice and Palliative Medicine" , "Sleep Medicine" , "Therapeutic Radiology" , "Speech Therapy" , "Spinal Cord Injury Medicine" , "Legal Medicine" , "Chiropractic Medical Examiner" , "Psych/Mental Health Nurse Practitioner" , "MOHS-Micrographic Surgery" , "Neuropathology" , "Nuclear Cardiology" , "Nuclear Imaging & Therapy" , "Occupational Medicine" , "Critical Care Medicine OBGYN" , "Dental Therapist" , "Dermatology" , "Vision Therapy" , "Pain Medicine" , "Blood Banking & Transfusion Medicine" , "Otolaryngology" , "Pediatric Radiology" , "Chiropractic Rehabilitation" , "Psychiatry" , "Plastic Surgery" , "Physical Therapy", "Foot Surgery" , "Rehabilitation Counselor" , "Rheumatology" , "Acupuncture" , "Addiction Psychiatry" , "Cardiopulmonary Physical Therapy" , "Critical Care Medicine" , "Audiology & Hearing Aid Fitter" , "Internal Medicine" , "Nutrition Medicine"]; //NAME
 
 
-let codeCountries = ["pediatrician", "dentist", "sport-physical-therapist", "sports-vision-optometrist", "Surgery Hospice and Palliative Medicine", "sleep-medicine-doctor" , "therapeutic-radiologist" , "speech-therapist" , "spinal-cord-injury-physiatrist" , "legal-medicine" , "medical-examiner-chiropractor" , "mental-health-nurse-practitioner" , "micrographic-surgeon" , "neuropathologist" ,"nuclear-cardiologist" , "nuclear-imaging-doctor" , "occupational-medicine-doctor" , "critical-care-obgyn" , "dental-therapist" , "dermatologist" , "vision-therapy-optometrist" , "pain-management-doctor" , "blood-banking-transfusion-doctor" , "ear-nose-throat-doctor" , "pediatric-radiologist" , "rehabilitation-chiropractor" , "psychiatrist" , "plastic-surgery-specialist" , "physical-therapist" , "podiatry-foot-surgeon", "rehabilitation-counselor" , "rheumatologist" , "acupuncturist" , "addiction-psychiatrist" , "cardiopulmonary-physical-therapist" , "critical-care-doctor" , "hearing-aid-audiologist" , "internist" , "nutritionist"]; //UID
+let codeCountries = ["obgyn-nurse-practitioner", "pediatrician", "dentist", "sport-physical-therapist", "sports-vision-optometrist", "Surgery Hospice and Palliative Medicine", "sleep-medicine-doctor" , "therapeutic-radiologist" , "speech-therapist" , "spinal-cord-injury-physiatrist" , "legal-medicine" , "medical-examiner-chiropractor" , "mental-health-nurse-practitioner" , "micrographic-surgeon" , "neuropathologist" ,"nuclear-cardiologist" , "nuclear-imaging-doctor" , "occupational-medicine-doctor" , "critical-care-obgyn" , "dental-therapist" , "dermatologist" , "vision-therapy-optometrist" , "pain-management-doctor" , "blood-banking-transfusion-doctor" , "ear-nose-throat-doctor" , "pediatric-radiologist" , "rehabilitation-chiropractor" , "psychiatrist" , "plastic-surgery-specialist" , "physical-therapist" , "podiatry-foot-surgeon", "rehabilitation-counselor" , "rheumatologist" , "acupuncturist" , "addiction-psychiatrist" , "cardiopulmonary-physical-therapist" , "critical-care-doctor" , "hearing-aid-audiologist" , "internist" , "nutritionist"]; //UID
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("myInput"), countries);

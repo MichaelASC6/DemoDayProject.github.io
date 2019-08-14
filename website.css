@@ -42,6 +42,7 @@ body{
     padding: 10px;
     justify-content: center;
     background-color: rgb(225, 225, 225);
+    z-index: 100;
 }
 
 #after_header {
@@ -300,7 +301,6 @@ color: #ffffff;
     position: relative;
     margin: auto;
 }
-
 
 .mySlides {
     display: none;

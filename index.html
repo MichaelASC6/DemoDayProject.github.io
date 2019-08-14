@@ -24,29 +24,29 @@
         <form id="drop_down" autocomplete="off" action="/action_page.php">
             <div id="specialty_box" class="autocomplete header_boxes">
                 <img class="icons" src="images/specialty.svg" width="25px" height="25px">
-                <input type="text" id="myInput" placeholder="Doctor's specialty" name="myCountry">
+                <input type="text" class="the_inputs" id="myInput" placeholder="Doctor's specialty" name="myCountry">
             </div>    
         </form>
 
         <form id="inputForm">
             <div id="name_box" class="header_boxes">
                 <img class="icons" src="images/name.svg" width="25px" height="25px">
-                <input type="text" id="name_input" placeholder="Doctor's Name">
+                <input type="text" class="the_inputs" id="name_input" placeholder="Doctor's Name">
             </div>
 
             <div id="gender_box" class="header_boxes">
                 <img class="icons" src="images/gender.png" width="32px" height="32px">
-                <input type="text" id="gender_input" placeholder="Search by gender">
+                <input type="text" class="the_inputs" id="gender_input" placeholder="Search by gender">
             </div>
 
             <div id="location_box" class="header_boxes">
                 <img class="icons" src="images/tagIcon.png" width="22px" height="22px">
-                <input type="text" id="location_input" placeholder="Enter Location">
+                <input type="text" class="the_inputs" id="location_input" placeholder="Enter Location">
             </div>
 
             <div id="range_box" class="header_boxes">
                 <img class="icons" src="images/range.png" width="25px" height="25px">
-                <input type="text" id="range_input" placeholder="Range(miles)">
+                <input type="text" class="the_inputs" id="range_input" placeholder="Range(miles)">
             </div>
 
             <button id="searchDoctor"><img src="images/glass.png" width="30px"></button>
@@ -98,8 +98,6 @@
             </div>
         </div>
 
-        <div id="missionStatement"> </div>
-
         <div id="doctor_examples">
 
             <!-- <div id="first_example" class="doctor_descriptions"></div> -->
@@ -126,7 +124,14 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
+
+        <div id="missionStatement"> 
+            <h3 id="missionHeading">Our Mission Statement</h3>
+            <p id="mission_statement">Our mission is to make it easier to access doctors. Our top-of-the-line website will search a doctor that is perfect for you, bases on the filters you provided. Our database has over  </p>
+        </div>
+
     </div>
+
 
     <div id="results_page">
         
