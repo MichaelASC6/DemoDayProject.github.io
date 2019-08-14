@@ -1,0 +1,267 @@
+/* #results_page {
+    display: ;
+} */
+
+/* width */
+::-webkit-scrollbar {
+width: 13px;
+}
+
+/* Track The white track*/
+::-webkit-scrollbar-track {
+background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: transarent; 
+border: 2.2px solid grey;
+border-radius: 50px;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
+
+body{
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(30,48,84);
+    transform: rotate(0deg);
+}
+
+#nav_bar {
+    display: block;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    background-color: rgb(225, 225, 225);
+}
+
+#after_header {
+    height: 70px;
+    background-color: rgb(225, 225, 225);
+}
+
+#drop_down {
+    margin-right: 1px;
+}
+
+#searchDoctor {
+    background-color: rgb(255, 213, 77);
+    border: 0px solid;
+    height: 37px;
+}
+
+#welcome {
+    margin: 0px;
+}
+
+.icons {
+    padding-right: 10px;
+    padding-left:5px;
+}
+
+#header {
+    background-color: rgb(225, 225, 225);
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+}
+
+input{ 
+    height: 35px;
+    border: 0px solid transparent;
+}
+input:focus{
+    outline: none;
+}
+
+.header_boxes {
+    margin-right: 2px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+#inputForm {
+    display: flex;
+}
+
+#buttons {
+    background-color: #F5F5F5;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#heading_buttons {
+    text-align: center;
+    font-weight: bold;
+    font-size: 23px;
+}
+#One_button_section {
+    padding-bottom: 60px;
+}
+
+.button_sections {
+    display: flex;
+    justify-content: space-around;
+}
+.button_sp {
+    text-align: center;
+    width: 100px;
+}
+
+#doctor_examples {
+    height: 500px;
+    background-color: rgb(225, 225, 225);
+}
+
+/* This is the start of the results page */
+ /*   */
+
+#results_page {
+    padding-top: 100px;
+    /* margin: auto; */
+}
+
+#description {
+    margin: auto;
+    max-height: 325px;
+    max-width: 70%;
+    /* border: 2px solid aqua; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: 1px solid rgb(30,48,84);
+    padding: 30px 0px 30px 0px;
+}
+
+#image_number {
+    /* border: 1px solid black; */
+    width: 300px;
+}
+
+.image {
+    border-radius: 50%;
+    margin: auto;
+    width: 160px;
+    height: 160px;
+    padding-bottom: 5px;
+}
+
+.number_website_location {
+    height: 135px;
+    width: 300px;
+    /* border: 1px solid blue; */
+    font-size: 14px;
+    text-align: center;
+}
+
+.name {
+    color: #5FDD9D;
+    background-color: rgba(200, 225, 225, 0.5);
+    margin: auto;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 14px
+}
+
+span {
+    font-weight: bold;
+}
+
+.des_in_re {
+    width: 600px;
+    height: 325px;
+    /* border: 1px solid purple; */
+    /* display: flex;
+    justify-content: space-around; */
+}
+
+.doctor_des {
+    /* border: 1px solid grey; */
+    max-height: 200px;
+    min-height: 200px;
+    max-width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    font-size: 14px;
+    padding: 0px 20px 20px 20px;
+}
+
+.des_titles{
+    border-radius: 25px;
+    background-color: rgba(200, 225, 225, 0.5);
+    width: 115px;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.insurance {
+    /* border: 1px solid red; */
+    height: 81px;
+    width: 93%;
+    padding: 10px 20px 20px 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* This is the beginning of the dropDown's css */
+
+/*the container must be positioned relative:*/
+.autocomplete {
+position: relative;
+/* display: inline-block; MAYBE THE ANSWER TO WHY THE ICON WAS NOT PROPERLY PLACED, BUT ASK ABI */
+}
+
+.autocomplete-items {
+position: absolute;
+border-bottom: none;
+border-top: 1px solid #d4d4d4;
+z-index: 99;
+/*position the autocomplete items to be the same width as the container:*/
+width: 204;
+top: 100%;
+left: 0;
+right: 0;
+font-size: 13.3333px;
+}
+
+.autocomplete-items div {
+padding: 10px;
+cursor: pointer;
+background-color: #fff; 
+border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+background-color: DodgerBlue !important; 
+color: #ffffff; 
+}
+
+

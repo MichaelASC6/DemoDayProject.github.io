@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DoctorXplore</title>
+    <link rel="stylesheet" href="website.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>  
+    <div id= "header">
+        
+        <div id="logo_and_welcome">
+            <img src="images/logo.png" width="200px">
+            <h1 id="welcome">Welcome, Find Doctors Near You</h1>
+            <br><br>
+        </div>
+    </div>
+
+    <div id="nav_bar">
+
+        <form id="drop_down" autocomplete="off" action="/action_page.php">
+            <div id="specialty_box" class="autocomplete header_boxes">
+                <img class="icons" src="images/specialty.svg" width="25px" height="25px">
+                <input type="text" id="myInput" placeholder="Doctor's specialty" name="myCountry">
+            </div>    
+        </form>
+
+        <form id="inputForm">
+            <div id="name_box" class="header_boxes">
+                <img class="icons" src="images/name.svg" width="25px" height="25px">
+                <input type="text" id="name_input" placeholder="Doctor's Name">
+            </div>
+
+            <div id="gender_box" class="header_boxes">
+                <img class="icons" src="images/gender.png" width="32px" height="32px">
+                <input type="text" id="gender_input" placeholder="Search by gender">
+            </div>
+
+            <div id="location_box" class="header_boxes">
+                <img class="icons" src="images/tagIcon.png" width="22px" height="22px">
+                <input type="text" id="location_input" placeholder="Enter Location">
+            </div>
+
+            <div id="range_box" class="header_boxes">
+                <img class="icons" src="images/range.png" width="25px" height="25px">
+                <input type="text" id="range_input" placeholder="Range(miles)">
+            </div>
+
+            <button id="searchDoctor"><img src="images/glass.png" width="30px"></button>
+        </form>
+    </div>
+
+    <div id="after_header"></div>
+
+    <div id="main_page">
+        <div id="buttons">
+
+            <h3 id="heading_buttons">These are the few of the many specialties DoctorXplore offers:</h3>
+            
+            <br><br><br>
+
+            <div id="One_button_section" class="button_sections">
+                <div id="OBGYN_button" class="button_sp">
+                    <img src="images/obgyn.png" width="100px"><!-- Ask anybody how to make these buttons with innerHTML to fill for the specialty -->
+                    <p>OBGYN</p>
+                </div>
+
+                <div id="pediatrician_button" class="button_sp">
+                    <img src="images/pediatrician.png" width="100px">
+                    <p>Pediatrician</p>
+                </div>
+
+                <div id="dentist_button" class="button_sp">
+                    <img src="images/dentist.png" width="100px">
+                    <p>Dentist</p>
+                </div>
+            </div>
+
+            <div id="Two_button_section" class="button_sections">
+                <div id="dermatologist_button" class="button_sp">
+                    <img src="images/dermatology.png" width="100px">
+                    <p>Dermatology</p>
+                </div>
+                
+                <div id="sportTherapy_button" class="button_sp">
+                    <img src="images/therapy.png" width="100px">
+                    <p>Sports Therapy</p>
+                </div>
+
+                <div id="psychiatrist_button" class="button_sp">
+                    <img src="images/psychiatrist.png" width="100px">
+                    <p>Psychiatry</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="doctor_examples">
+
+            <div id="first_example" class="doctor_descriptions">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="results_page">
+        
+    </div>
+
+<script src="website.js"></script>
+
+</body>
+</html>
