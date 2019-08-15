@@ -59,7 +59,7 @@ searchButton.onclick = function(event) {
                     console.log(myJson);
 
                     resultsPage.innerHTML = "";
-                    let specialtyWord = `<span id="specialty_In_title">` + niceSpecialty.charAt(0).toUpperCase() + niceSpecialty.slice(1) + "s" + "</span>";
+                    let specialtyWord = `<span id="specialty_In_title">` + niceSpecialty.charAt(0).toUpperCase() + niceSpecialty.slice(1) + " Professionals</span>";
 
                     //substitute the WELCOME with Results
                     titlePage.innerHTML = "Based on the filters, these are the " + specialtyWord + " near you:";
