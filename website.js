@@ -14,10 +14,6 @@ searchButton.onclick = function(event) {
     //hide the main page and just leave the header
     mainPage.style.display = "none";
 
-    //substitute the WELCOME with Results
-    titlePage.innerHTML = "Based on the filters, these are the doctors near you:";
-
-
     //capture the user's input with the variable(value)
     let specialtyInput = specialtyTextBox.value.trim();
     let name = nameTextBox.value;
@@ -62,6 +58,10 @@ searchButton.onclick = function(event) {
                     console.log(myJson);
 
                     resultsPage.innerHTML = "";
+                    let specialtyWord = `<span id="specialty_In_title">` + specialtyInput.charAt(0).toUpperCase() + specialtyInput.slice(1) + "s" + "</span>";
+
+                    //substitute the WELCOME with Results
+                    titlePage.innerHTML = "Based on the filters, these are the " + specialtyWord + " near you:";
                     let temp;
                     let tempHTML = ""
                     for(let i = 0; i < myJson.data.length; i++) {

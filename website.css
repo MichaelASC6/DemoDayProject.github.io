@@ -119,7 +119,6 @@ input:focus{
 }
 
 #doctor_examples {
-    height: 500px;
     background-color: rgb(225, 225, 225);
 }
 
@@ -295,7 +294,8 @@ color: #ffffff;
 }
 
 .slideshow-container {
-    padding-top: 75px;
+    padding-top: 70px;
+    padding-bottom: 70px;
     max-width: 1000px;
     max-height: 1000px;
     position: relative;
@@ -308,13 +308,13 @@ color: #ffffff;
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: rgb(30,48,84);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 30px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -324,7 +324,7 @@ color: #ffffff;
     border-radius: 3px 0 0 3px;
 }
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(30,48,84,0.8);
 }
 .text {
     color: #f2f2f2;
@@ -369,3 +369,45 @@ color: #ffffff;
     from {opacity: .4}
     to {opacity: 1}
 } 
+
+#specialty_In_title {
+    color: #5FDD9D;
+}
+
+.missionHeading {
+    margin-top: 50px;
+    text-align: center;
+    /* border-radius: 25px; */
+    background-color: rgba(200, 225, 225, 0.5);
+    text-align: center;
+    padding: 5px;
+    font-size: 23px;
+    
+}
+
+.mission_statement_paragraph {
+    text-align: justify;
+    width: 1000px;
+    margin: auto;
+}
+
+#contact_info {
+    display: flex;
+    justify-content: center;
+}
+
+#contact_box1 {
+    padding-right: 100px;
+    width: 200px;
+}
+
+#contact_box2 {
+    width: 200px;
+}
+
+
+
+
+
+
+
