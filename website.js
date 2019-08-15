@@ -1,5 +1,5 @@
 let specialtyTextBox = document.getElementById("myInput");
-let nameTextBox = document.getElementById("name_input");
+// let nameTextBox = document.getElementById("name_input");
 let genderTextBox = document.getElementById("gender_input");
 let locationTextBox = document.getElementById("location_input");
 let rangeTextBox = document.getElementById("range_input");
@@ -16,12 +16,13 @@ searchButton.onclick = function(event) {
 
     //capture the user's input with the variable(value)
     let specialtyInput = specialtyTextBox.value.trim();
-    let name = nameTextBox.value;
-    let nameInput = 'name=' + name.trim().toLowerCase() + "&";
+    // let name = nameTextBox.value;
+    // let nameInput = 'name=' + name.trim().toLowerCase() + "&";
     let genderInput = genderTextBox.value.trim();
     let locationInput = locationTextBox.value.trim().split(",").join("%2C");
     let rangeInput = rangeTextBox.value.trim();
     let coordinates;
+    let niceSpecialty = specialtyInput;
     specialtyInput = codeCountries[countries.indexOf(specialtyInput)]; // gets the information from the dropwDown Array
     let apiKey = '&key=AIzaSyBGUACjxXKKiD1TMdxRXtTX1vYoo6SDtxc';
     let url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + locationInput + apiKey;
@@ -40,7 +41,7 @@ searchButton.onclick = function(event) {
             coordinates = myJson.results[0].geometry.location.lat + " " + myJson.results[0].geometry.location.lng + " "; 
             
             let api_key = '26f16a5d43ff3ae3e9bb9242b7bceb2f'; // Get your API key at developer.betterdoctor.com
-            let resource_url1 = 'https://api.betterdoctor.com/2016-03-01/doctors?' + nameInput + 'specialty_uid=' + specialtyInput + '&location=' + coordinates.split(" ").join('%2C')  + "%20" + rangeInput + '&gender=' + genderInput + "&skip=0&limit=3" + '&user_key=' + api_key;
+            let resource_url1 = 'https://api.betterdoctor.com/2016-03-01/doctors?' + 'specialty_uid=' + specialtyInput + '&location=' + coordinates.split(" ").join('%2C')  + "%20" + rangeInput + '&gender=' + genderInput + "&skip=0&limit=3" + '&user_key=' + api_key;
             let resource_url2 = 'https://api.betterdoctor.com/2016-03-01/doctors?name=Elizabeth&specialty_uid=dentist&location=40.78306%2C-73.971249%2C%2050&gender=female&skip=0&limit=4&user_key=26f16a5d43ff3ae3e9bb9242b7bceb2f'
             
             console.log("Here is the URL location:", coordinates.split(' ').join('%2C') + "%20" + rangeInput);
@@ -58,7 +59,7 @@ searchButton.onclick = function(event) {
                     console.log(myJson);
 
                     resultsPage.innerHTML = "";
-                    let specialtyWord = `<span id="specialty_In_title">` + specialtyInput.charAt(0).toUpperCase() + specialtyInput.slice(1) + "s" + "</span>";
+                    let specialtyWord = `<span id="specialty_In_title">` + niceSpecialty.charAt(0).toUpperCase() + niceSpecialty.slice(1) + "s" + "</span>";
 
                     //substitute the WELCOME with Results
                     titlePage.innerHTML = "Based on the filters, these are the " + specialtyWord + " near you:";
